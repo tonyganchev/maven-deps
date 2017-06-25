@@ -1,0 +1,4 @@
+py==1.4.34
+pydot==1.2.3
+pyparsing==2.2.0
+pytest==3.1.2
