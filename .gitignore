@@ -1,0 +1,4 @@
+.eggs 
+.tox 
+dist
+mavendeps.egg-info 
