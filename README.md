@@ -12,6 +12,6 @@ The library provides engineers with a way to filter out and style a maven depend
 Links
 -----
 
-*[FuseSource Maven Plugins](https://github.com/fusesource/mvnplugins)
-*[GitHub]()
+* [FuseSource Maven Plugins](https://github.com/fusesource/mvnplugins)
+* [GitHub]()
 * Source: `git clone https://github.com/tonyganchev/maven-deps.git`
