@@ -18,3 +18,5 @@ install:
 # command to run tests
 script:
   - tox
+after_failure:
+  - cat /home/travis/build/tonyganchev/maven-deps/.tox/log/tox-0.log
