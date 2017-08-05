@@ -47,7 +47,7 @@ class FilterArtifactsTestCase(unittest.TestCase):
         expected = tuple(expected)
         actual = tuple(actual)
         self.assertEqual(expected, actual)
-        for i in xrange(0, len(expected)):
+        for i in range(0, len(expected)):
             self.assertSequenceEqual(tuple(expected[i].dependencies), tuple(actual[i].dependencies))
             self.assertSequenceEqual(tuple(expected[i].all_dependencies), tuple(actual[i].all_dependencies))
             self.assertSequenceEqual(tuple(expected[i].dependents), tuple(actual[i].dependents))

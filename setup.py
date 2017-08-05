@@ -34,7 +34,13 @@ setup(name='mavendeps',
       author='Tony Ganchev',
       author_email='tony.ganchev@gmail.com',
       license='The MIT License (MIT)',
-      long_description=open("README.txt").read(),
+      long_description='''
+          The library provides engineers with a way to filter out and style a
+          maven dependency graph generated using the FuseSource maven graph
+          plugin. This allows for the investigation of complex build
+          dependency webs to figure out a specific issue or for presentation
+          purposes.
+      ''',
       tests_require=['tox'],
       cmdclass={'test': Tox},
       # package_data_dirs=['mavendeps/samples'],

@@ -108,7 +108,7 @@ class Artifact:
     def remove_dependency(self, artifact):
         for d in self._dependencies:
             if d.artifact == artifact:
-                print '{} dropping dependency to {}'.format(self._descriptor, d.artifact.descriptor)
+                print('{} dropping dependency to {}'.format(self._descriptor, d.artifact.descriptor))
                 self._dependencies.remove(d)
                 d.artifact.remove_dependent(self)
                 break
@@ -116,7 +116,7 @@ class Artifact:
     def remove_dependent(self, artifact):
         for d in self._dependents:
             if d.artifact == artifact:
-                print '{} dropping dependency from {}'.format(self._descriptor, d.artifact.descriptor)
+                print('{} dropping dependency from {}'.format(self._descriptor, d.artifact.descriptor))
                 self._dependents.remove(d)
                 break
 
@@ -162,12 +162,12 @@ def filter_artifacts(in_artifacts, filter_chain):
     required_artifacts = set()
     for filter_func in filter_chain:
         filter_name = filter_func.__name__
-        print '{}: applying for {} artifact(s).'.format(filter_name, len(artifacts))
-        for artifact_idx in xrange(0, len(artifacts)):
+        print('{}: applying for {} artifact(s).'.format(filter_name, len(artifacts)))
+        for artifact_idx in range(0, len(artifacts)):
             artifact = artifacts[artifact_idx]
             if artifact.descriptor not in required_artifacts:
                 filter_action = filter_func(artifact)
-                print '{}: {} {}'.format(filter_name, filter_action, artifact.descriptor)
+                print('{}: {} {}'.format(filter_name, filter_action, artifact.descriptor))
                 if filter_action == FilterAction.no_action:
                     pass
                 elif filter_action == FilterAction.accept:
@@ -179,7 +179,7 @@ def filter_artifacts(in_artifacts, filter_chain):
                     for dependent in tuple(artifact.dependents):
                         dependent.artifact.remove_dependency(artifact)
             else:
-                print '{}: skipping {}'.format(filter_name, artifact.descriptor)
+                print('{}: skipping {}'.format(filter_name, artifact.descriptor))
         artifacts = [artifact for artifact in artifacts if artifact is not None]
     return tuple(artifacts)
 

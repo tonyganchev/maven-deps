@@ -2,7 +2,7 @@
 
 from pydot import *
 
-from maven_graph import *
+from .maven_graph import *
 
 __author__ = 'Tony Ganchev'
 
