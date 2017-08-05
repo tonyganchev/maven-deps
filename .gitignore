@@ -6,3 +6,6 @@ env/
 dist/
 .tox/
 mavendeps.egg-info/
+.cache/ 
+__cache__/ 
+build/ 
