@@ -14,7 +14,11 @@ def artifact_label(artifact_id):
 
 
 LABEL_REGEX = re.compile(
-    r'"(?P<group_id>[^\\]+)\\n(?P<artifact_id>[^\\]+)((\\n(?P<packaging>[^\:\\]+))(\:(?P<classifier>[^\\]+))?)?\\n(?P<version>[^\\]+)"')
+    r'"(?P<group_id>[^\\]+)\\n'
+    r'(?P<artifact_id>[^\\]+)'
+    r'((\\n(?P<packaging>[^:\\]+))'
+    r'(:(?P<classifier>[^\\]+))?)?\\n'
+    r'(?P<version>[^\\]+)"')
 
 
 def parse_artifact_descriptor(label):
@@ -65,7 +69,7 @@ def parse_dot_graph(source_file):
     with open(source_file, 'r') as f:
         data = f.read()
     graph = dot_parser.parse_dot_data(data)
-    return graph[0] if not graph is None else None
+    return graph[0] if graph is not None else None
 
 
 SCOPE_WEIGHTS = {
@@ -113,12 +117,12 @@ def dot_to_maven_graph(in_graph):
             dependencies[source][destination] = stronger_scope(
                 dependencies[source][destination], scope)
 
-    for source, sd in dependencies.iteritems():
-        for destination, scope in sd.iteritems():
+    for source, sd in dependencies.items():
+        for destination, scope in sd.items():
             artifacts_by_descriptor[source].add_dependency(
                 ArtifactDependency(artifacts_by_descriptor[destination]))
 
-    return [a for _, a in artifacts_by_descriptor.iteritems()]
+    return [a for _, a in artifacts_by_descriptor.items()]
 
 
 def apply_style_functions(artifact, node, style_functions):
@@ -133,17 +137,15 @@ def maven_to_dot_graph(in_artifacts, style_functions):
     graph.add_node(edge_node())
 
     artifacts = {a.descriptor: a for a in in_artifacts}
-    for _, artifact in artifacts.iteritems():
+    for _, artifact in artifacts.items():
         node = Node(node_id(artifact.descriptor))
         node.set_label(artifact_label(artifact.descriptor))
         apply_style_functions(artifact, node, style_functions)
         graph.add_node(node)
-    for _, artifact in artifacts.iteritems():
+    for _, artifact in artifacts.items():
         for dep in artifact.dependencies:
             edge = Edge(node_id(artifact.descriptor), node_id(dep.artifact.descriptor))
             if dep.scope != 'compile':
                 edge.set_label(dep.scope)
             graph.add_edge(edge)
     return graph
-
-

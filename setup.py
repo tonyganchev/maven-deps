@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # from distutils.core import setup
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import sys
 import mavendeps
@@ -22,11 +22,6 @@ class Tox(TestCommand):
         sys.exit(errcode)
 
 
-# prerequisite - python 2-compatible pyparsing module.
-#
-# pip uninstall pyparsing
-# pip install -Iv https://pypi.python.org/packages/source/p/pyparsing/pyparsing-1.5.7.tar.gz#md5=9be0fcdcc595199c646ab317c1d9a709
-# pip install pydot
 setup(name='mavendeps',
       version=mavendeps.__version__,
       url='https://www.github.com/tonyganchev/maven-deps/',
@@ -43,20 +38,21 @@ setup(name='mavendeps',
       ''',
       tests_require=['tox'],
       cmdclass={'test': Tox},
-      # package_data_dirs=['mavendeps/samples'],
-      # scripts=['mavendeps/samples/reduce_karaf_codebase_deps.py',
-      #          'mavendeps/samples/reduce_karaf_sample_deps.py'],
       packages=['mavendeps'],
       include_package_data=True,
       platforms='any',
       classifiers=[
           'Programming Language :: Python',
-          'Development Status :: 4 - Beta',
+          'Development Status :: 5 - Production/Stable',
           'Natural Language :: English',
           'Environment :: CLI Environment',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: The MIT License (MIT)',
           'Operating System :: OS Independent',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Topic :: Scientific/Engineering :: Visualization',
+          'Topic :: Software Development :: Build Tools',
           'Topic :: Software Development :: Libraries :: Python Modules'
       ],
       keywords=[])

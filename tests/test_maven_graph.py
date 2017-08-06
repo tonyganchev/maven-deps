@@ -1,6 +1,7 @@
 import unittest
 
-from mavendeps.maven_graph import *
+from mavendeps import ArtifactDescriptor, Artifact, ArtifactDependency, filter_artifacts, FilterAction, reject_any, \
+    ignore_any, accept_any
 
 __author__ = 'Tony Ganchev'
 
@@ -21,7 +22,8 @@ class ArtifactDescriptorTestCase(unittest.TestCase):
 
 
 class FilterArtifactsTestCase(unittest.TestCase):
-    def _create_artifact(self, artifact_id, in_reactor=False, packaging='jar'):
+    @staticmethod
+    def _create_artifact(artifact_id, in_reactor=False, packaging='jar'):
         return Artifact(ArtifactDescriptor('grp', artifact_id, '1.0.0', packaging), in_reactor)
 
     def _create_graph(self, artifact_ids, dependencies):
@@ -106,8 +108,8 @@ class FilterArtifactsTestCase(unittest.TestCase):
         self._assert_graphs_equal(expected, graph)
 
     def test_filter_dependency(self):
-        (prod, cons1, cons2), (dep1, dep2), _ = self._create_graph(('prod', 'cons1', 'cons2'),
-                                                                   (('cons1', 'prod'), ('cons2', 'prod')))
+        (prod, cons1, cons2), (_, _), _ = self._create_graph(('prod', 'cons1', 'cons2'),
+                                                             (('cons1', 'prod'), ('cons2', 'prod')))
 
         def f(a): return FilterAction.reject if a.descriptor.artifact_id == 'prod' else FilterAction.accept
 

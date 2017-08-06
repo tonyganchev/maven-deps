@@ -108,7 +108,7 @@ class Artifact:
     def remove_dependency(self, artifact):
         for d in self._dependencies:
             if d.artifact == artifact:
-                print('{} dropping dependency to {}'.format(self._descriptor, d.artifact.descriptor))
+                # print('{} dropping dependency to {}'.format(self._descriptor, d.artifact.descriptor))
                 self._dependencies.remove(d)
                 d.artifact.remove_dependent(self)
                 break
@@ -116,7 +116,7 @@ class Artifact:
     def remove_dependent(self, artifact):
         for d in self._dependents:
             if d.artifact == artifact:
-                print('{} dropping dependency from {}'.format(self._descriptor, d.artifact.descriptor))
+                # print('{} dropping dependency from {}'.format(self._descriptor, d.artifact.descriptor))
                 self._dependents.remove(d)
                 break
 
@@ -131,17 +131,30 @@ class ArtifactDependency:
         self._scope = scope
 
     @property
-    def artifact(self): return self._artifact
+    def artifact(self):
+        return self._artifact
 
     @property
-    def scope(self): return self._scope
+    def scope(self):
+        return self._scope
 
     def __eq__(self, other):
-        return self._artifact == other.artifact and self._scope == other.scope if isinstance(other,
-                                                                                             ArtifactDependency) else False
+        """
+        Checks two ArtifactDependency instances for equality.
+
+        :type other: ArtifactDependency
+        """
+        if isinstance(other, ArtifactDependency):
+            return self._artifact == other.artifact and self._scope == other.scope
+        else:
+            return False
 
 
 class FilterAction:
+    """
+    Return value type for filtering functions. Determines whether the artifact passed to the filter function should be
+    accepted, rejected, or further processed.
+    """
     accept = 'accept'
     reject = 'reject'
     no_action = 'no_action'
@@ -151,6 +164,10 @@ class FilterAction:
 
 
 def filter_artifacts(in_artifacts, filter_chain):
+    """
+    Generates a set of Maven artifacts from an incoming set of artifacts by
+    passing the incoming set through a chain of filter functions.
+    """
     from sys import getrecursionlimit, setrecursionlimit
     rl = getrecursionlimit()
     setrecursionlimit(10000)
@@ -158,16 +175,16 @@ def filter_artifacts(in_artifacts, filter_chain):
     artifacts = [a for a in deepcopy(in_artifacts)]
     setrecursionlimit(rl)
 
-    # descriptors pf the artifacts that need to be preserved.
+    # descriptors of the artifacts that need to be preserved.
     required_artifacts = set()
     for filter_func in filter_chain:
-        filter_name = filter_func.__name__
-        print('{}: applying for {} artifact(s).'.format(filter_name, len(artifacts)))
+        # filter_name = filter_func.__name__
+        # print('{}: applying for {} artifact(s).'.format(filter_name, len(artifacts)))
         for artifact_idx in range(0, len(artifacts)):
             artifact = artifacts[artifact_idx]
             if artifact.descriptor not in required_artifacts:
                 filter_action = filter_func(artifact)
-                print('{}: {} {}'.format(filter_name, filter_action, artifact.descriptor))
+                # print('{}: {} {}'.format(filter_name, filter_action, artifact.descriptor))
                 if filter_action == FilterAction.no_action:
                     pass
                 elif filter_action == FilterAction.accept:
@@ -179,15 +196,31 @@ def filter_artifacts(in_artifacts, filter_chain):
                     for dependent in tuple(artifact.dependents):
                         dependent.artifact.remove_dependency(artifact)
             else:
-                print('{}: skipping {}'.format(filter_name, artifact.descriptor))
+                # print('{}: skipping {}'.format(filter_name, artifact.descriptor))
+                pass
         artifacts = [artifact for artifact in artifacts if artifact is not None]
     return tuple(artifacts)
 
 
-def ignore_any(_): return FilterAction.no_action
+def ignore_any(_):
+    """
+    Stock filter function that skips processing the passed artifact. The artifact
+    proceeds further down the filter chain.
+    """
+    return FilterAction.no_action
 
 
-def accept_any(_): return FilterAction.accept
+def accept_any(_):
+    """
+    Stock filter function that accepts the passed artifact. The artifact remains
+    part of the resulting graph and is not a subject to further filtering.
+    """
+    return FilterAction.accept
 
 
-def reject_any(_): return FilterAction.reject
+def reject_any(_):
+    """
+    Stock filter function that rejects the passed artifact. The artifact is
+    removed from the resulting graph and is not a subject to further filtering.
+    """
+    return FilterAction.reject

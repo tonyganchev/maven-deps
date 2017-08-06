@@ -13,7 +13,7 @@ def include_reactor_artifacts(artifact):
 def exclude_non_reactor_dependencies(artifact):
     for a in artifact.dependents:
         if a.artifact.in_reactor:
-            print [str(aa.artifact.descriptor) for aa in artifact.dependents]
+            print([str(aa.artifact.descriptor) for aa in artifact.dependents])
             return FilterAction.accept
     return FilterAction.no_action
 

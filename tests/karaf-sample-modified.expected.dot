@@ -1,0 +1,28 @@
+digraph G {
+graph [rankdir=LR];
+node [fontsize=10, style=filled, shape=rect, fontname=Tahoma];
+edge [fontsize=10, fontname=Tahoma];
+"com.tonyganchev.blog:karaf-assembly:karaf-assembly:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-assembly\nkaraf-assembly\n1.0-SNAPSHOT", penwidth=2, fillcolor="yellow"];
+"com.tonyganchev.blog:karaf-bundle-a:bundle | jar:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-bundle-a\nbundle | jar\n1.0-SNAPSHOT", penwidth=2, fillcolor="lightgreen"];
+"org.osgi:org.osgi.core:jar:6.0.0" [label="org.osgi\norg.osgi.core\njar\n6.0.0"];
+"com.tonyganchev.blog:karaf-bundle-b:bundle:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-bundle-b\nbundle\n1.0-SNAPSHOT", penwidth=2, fillcolor="lightgreen"];
+"com.tonyganchev.blog:karaf-bundle-c:bundle:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-bundle-c\nbundle\n1.0-SNAPSHOT", penwidth=2, fillcolor="lightgreen"];
+"org.apache.karaf.features:framework:kar:4.0.5-SNAPSHOT" [label="org.apache.karaf.features\nframework\nkar\n4.0.5-SNAPSHOT", fillcolor="pink"];
+"org.apache.karaf.features:standard:xml:features:4.0.5-SNAPSHOT" [label="org.apache.karaf.features\nstandard\nxml\nfeatures\n4.0.5-SNAPSHOT"];
+"javax.servlet:javax.servlet-api:jar:3.1.0" [label="javax.servlet\njavax.servlet-api\njar\n3.1.0"];
+"com.tonyganchev.blog:karaf-wab:bundle:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-wab\nbundle\n1.0-SNAPSHOT", penwidth=2, fillcolor="lightgreen"];
+"com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT" [label="com.tonyganchev.blog\nkaraf-kar\nkar\n1.0-SNAPSHOT", penwidth=2, fillcolor="pink"];
+"com.tonyganchev.blog:karaf-assembly:karaf-assembly:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-assembly:karaf-assembly:1.0-SNAPSHOT" -> "org.apache.karaf.features:standard:xml:features:4.0.5-SNAPSHOT";
+"com.tonyganchev.blog:karaf-assembly:karaf-assembly:1.0-SNAPSHOT" -> "org.apache.karaf.features:framework:kar:4.0.5-SNAPSHOT";
+"com.tonyganchev.blog:karaf-bundle-b:bundle:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:bundle | jar:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-bundle-b:bundle:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:jar:6.0.0";
+"com.tonyganchev.blog:karaf-wab:bundle:1.0-SNAPSHOT" -> "javax.servlet:javax.servlet-api:jar:3.1.0";
+"com.tonyganchev.blog:karaf-bundle-a:bundle | jar:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:jar:6.0.0";
+"com.tonyganchev.blog:karaf-bundle-c:bundle:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:bundle | jar:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-bundle-c:bundle:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:jar:6.0.0";
+"com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-b:bundle:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-c:bundle:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-wab:bundle:1.0-SNAPSHOT";
+"com.tonyganchev.blog:karaf-kar:kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:bundle | jar:1.0-SNAPSHOT";
+}
