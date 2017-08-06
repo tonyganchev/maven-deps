@@ -65,7 +65,7 @@ def parse_dot_graph(source_file):
     with open(source_file, 'r') as f:
         data = f.read()
     graph = dot_parser.parse_dot_data(data)
-    return graph
+    return graph[0] if not graph is None else None
 
 
 SCOPE_WEIGHTS = {
