@@ -1,0 +1,611 @@
+digraph dependencies {
+  graph [
+    label="Dependency Graph for karaf-parent"
+    labeljust=l
+    labelloc=t
+    fontsize=18
+    fontname="arial"
+    ranksep=1
+    rankdir="TB"
+    nodesep=.05
+  ];
+  node [
+    fontsize=8
+    fontname="arial"
+    shape="rectangle"
+  ];
+  edge [
+    fontsize=8
+    fontname="arial"
+  ];
+  "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-bundle-a\nbundle | jar\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "org.osgi:org.osgi.core:6.0.0" [
+    fontsize=8.0
+    label="org.osgi\norg.osgi.core\n6.0.0"
+    color="darkgrey"
+    fontcolor="darkgrey"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-bundle-b\nbundle\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-bundle-c\nbundle\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-wab:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-wab\nbundle\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "javax.servlet:javax.servlet-api:3.1.0" [
+    fontsize=8.0
+    label="javax.servlet\njavax.servlet-api\n3.1.0"
+    color="darkgrey"
+    fontcolor="darkgrey"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-kar\nkar\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-assembly:1.0-SNAPSHOT" [
+    fontsize=14.0
+    label="com.tonyganchev.blog\nkaraf-assembly\nkaraf-assembly\n1.0-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="#dddddd"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf.features\nframework\nkar\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf.features\nbase\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf:org.apache.karaf.main:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf\norg.apache.karaf.main\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf:org.apache.karaf.exception:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf\norg.apache.karaf.exception\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf\norg.apache.karaf.client\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf.jaas\norg.apache.karaf.jaas.boot\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.diagnostic:org.apache.karaf.diagnostic.boot:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf.diagnostic\norg.apache.karaf.diagnostic.boot\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.felix:org.apache.felix.framework:5.4.0" [
+    fontsize=8.0
+    label="org.apache.felix\norg.apache.felix.framework\n5.4.0"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf:org.apache.karaf.util:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf\norg.apache.karaf.util\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.felix:org.apache.felix.utils:1.8.2" [
+    fontsize=8.0
+    label="org.apache.felix\norg.apache.felix.utils\n1.8.2"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.slf4j:slf4j-api:1.7.12" [
+    fontsize=8.0
+    label="org.slf4j\nslf4j-api\n1.7.12"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "jline:jline:2.13" [
+    fontsize=8.0
+    label="jline\njline\n2.13"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.sshd:sshd-core:0.14.0" [
+    fontsize=8.0
+    label="org.apache.sshd\nsshd-core\n0.14.0"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.eclipse.birt.runtime:org.eclipse.osgi:3.10.2.v20150203-1939" [
+    fontsize=8.0
+    label="org.eclipse.birt.runtime\norg.eclipse.osgi\n3.10.2.v20150203-1939"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.jledit:core:0.2.1" [
+    fontsize=8.0
+    label="org.jledit\ncore\n0.2.1"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.ops4j.pax.logging:pax-logging-api:1.8.5" [
+    fontsize=8.0
+    label="org.ops4j.pax.logging\npax-logging-api\n1.8.5"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.ops4j.pax.logging:pax-logging-service:1.8.5" [
+    fontsize=8.0
+    label="org.ops4j.pax.logging\npax-logging-service\n1.8.5"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.ops4j.pax.url:pax-url-aether:2.4.5" [
+    fontsize=8.0
+    label="org.ops4j.pax.url\npax-url-aether\n2.4.5"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.felix:org.apache.felix.fileinstall:3.5.2" [
+    fontsize=8.0
+    label="org.apache.felix\norg.apache.felix.fileinstall\n3.5.2"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.felix:org.apache.felix.configadmin:1.8.8" [
+    fontsize=8.0
+    label="org.apache.felix\norg.apache.felix.configadmin\n1.8.8"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.features:org.apache.karaf.features.core:4.0.5-SNAPSHOT" [
+    fontsize=8.0
+    label="org.apache.karaf.features\norg.apache.karaf.features.core\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "org.apache.karaf.features:standard:4.0.5-SNAPSHOT:features" [
+    fontsize=8.0
+    label="org.apache.karaf.features\nstandard\nxml:features\n4.0.5-SNAPSHOT"
+    color="black"
+    fontcolor="black"
+    fillcolor="white"
+    style="solid,filled"
+  ];
+  "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:6.0.0" [
+    label="provided"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:6.0.0" [
+    label="provided"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" -> "org.osgi:org.osgi.core:6.0.0" [
+    label="provided"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "com.tonyganchev.blog:karaf-wab:1.0-SNAPSHOT" -> "javax.servlet:javax.servlet-api:3.1.0" [
+    label="provided"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=16.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=16.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-wab:1.0-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.main:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.exception:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.karaf.diagnostic:org.apache.karaf.diagnostic.boot:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:base:4.0.5-SNAPSHOT" -> "org.apache.felix:org.apache.felix.framework:5.4.0" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf.features:base:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=14.0
+  ];
+  "org.apache.karaf:org.apache.karaf.util:4.0.5-SNAPSHOT" -> "org.apache.felix:org.apache.felix.utils:1.8.2" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.util:4.0.5-SNAPSHOT" -> "org.slf4j:slf4j-api:1.7.12" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.util:4.0.5-SNAPSHOT" -> "org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.main:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.util:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.main:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.exception:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" -> "jline:jline:2.13" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" -> "org.apache.sshd:sshd-core:0.14.0" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" -> "org.slf4j:slf4j-api:1.7.12" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf:org.apache.karaf.client:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf.diagnostic:org.apache.karaf.diagnostic.boot:4.0.5-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.eclipse.birt.runtime:org.eclipse.osgi:3.10.2.v20150203-1939" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.felix:org.apache.felix.framework:5.4.0" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "jline:jline:2.13" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.jledit:core:0.2.1" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.ops4j.pax.logging:pax-logging-api:1.8.5" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.ops4j.pax.logging:pax-logging-service:1.8.5" -> "org.ops4j.pax.logging:pax-logging-api:1.8.5" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.ops4j.pax.logging:pax-logging-service:1.8.5" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.ops4j.pax.url:pax-url-aether:2.4.5" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.felix:org.apache.felix.fileinstall:3.5.2" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.felix:org.apache.felix.configadmin:1.8.8" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:org.apache.karaf.features.core:4.0.5-SNAPSHOT" -> "org.ops4j.pax.url:pax-url-aether:2.4.5" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" -> "org.apache.karaf.features:org.apache.karaf.features.core:4.0.5-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-assembly:1.0-SNAPSHOT" -> "org.apache.karaf.features:framework:4.0.5-SNAPSHOT" [
+    label=""
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=68.0
+  ];
+  "com.tonyganchev.blog:karaf-assembly:1.0-SNAPSHOT" -> "org.apache.karaf.features:standard:4.0.5-SNAPSHOT:features" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=2.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-b:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-a:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-bundle-c:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=8.0
+  ];
+  "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-wab:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=4.0
+  ];
+  "com.tonyganchev.blog:karaf-assembly:1.0-SNAPSHOT" -> "com.tonyganchev.blog:karaf-kar:1.0-SNAPSHOT" [
+    label="runtime"
+    style="solid"
+    color="black"
+    fontcolor="black"
+    weight=18.0
+  ];
+}
